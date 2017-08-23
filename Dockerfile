@@ -34,6 +34,7 @@ RUN useradd -m -U --uid 500 core
 VOLUME /home/core
 
 RUN set -x \
+    && apt-get update && apt-get install -y --no-install-recommends ca-certificates wget && rm -rf /var/lib/apt/lists/*
     && chown -R core /opt/MusicIP \
     && cd /home/core \
     && wget -O mmm.ini "http://www.barclayworks.com/mmm.ini" \
