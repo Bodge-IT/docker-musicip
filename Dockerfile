@@ -17,7 +17,8 @@ RUN set -x \
     && gpg --batch --verify /usr/local/bin/gosu.asc /usr/local/bin/gosu \
     && rm -r "$GNUPGHOME" /usr/local/bin/gosu.asc \
     && chmod +x /usr/local/bin/gosu \
-    && gosu nobody true
+    && gosu nobody true \
+    && apt-get purge -y --auto-remove ca-certificates wget
 
 # Fetch from spicefly.com
 # WORKDIR /opt
@@ -28,16 +29,10 @@ RUN set -x \
 
 ADD MusicMixer_x86_1.8.tgz /opt
 ADD index.html /opt/MusicIP/MusicMagicMixer/server
+ADD mmm.ini /opt/MusicIP/MusicMagicMixer
 RUN useradd -m -g users --uid 1057 musicip
 
 VOLUME /home/musicip
-
-RUN set -x \
-    && chown -R musicip /opt/MusicIP \
-    && cd /tmp \
-    && wget -O mmm.ini "http://www.barclayworks.com/mmm.ini" \
-    && cp -f mmm.ini /opt/MusicIP/MusicMagicMixer/ \
-    && apt-get purge -y --auto-remove ca-certificates wget
 
 EXPOSE 10002
 
