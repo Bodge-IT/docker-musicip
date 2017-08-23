@@ -33,7 +33,8 @@ RUN useradd -m -U --uid 500 core
 
 VOLUME /home/core
 
-RUN chown -R core /opt/MusicIP \
+RUN set -x \
+    && chown -R core /opt/MusicIP \
     && cd /home/core \
     && wget -O mmm.ini "http://www.barclayworks.com/mmm.ini" \
     && cp -f mmm.ini /opt/MusicIP/MusicMagicMixer/
