@@ -34,7 +34,8 @@ VOLUME /home/musicip
 
 RUN set -x \
     && chown -R musicip /opt/MusicIP \
-    && wget -O /home/musicip/mmm.ini "http://www.barclayworks.com/mmm.ini" \
+    && cd /home/musicip \
+    && wget -O "http://www.barclayworks.com/mmm.ini" \
     && cp -f /home/musicip/mmm.ini /opt/MusicIP/MusicMagicMixer/ \
     && apt-get purge -y --auto-remove ca-certificates wget
 
