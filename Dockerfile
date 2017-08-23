@@ -28,15 +28,14 @@ RUN set -x \
 
 ADD MusicMixer_x86_1.8.tgz /opt
 ADD index.html /opt/MusicIP/MusicMagicMixer/server
-RUN useradd -m -U --uid 500 core
+RUN useradd -m -g users --uid 1057 musicip
 
-VOLUME /home/core
+VOLUME /home/musicip
 
 RUN set -x \
-    && chown -R core /opt/MusicIP \
-    && cd /home/core \
-    && wget -O mmm.ini "http://www.barclayworks.com/mmm.ini" \
-    && cp -f mmm.ini /opt/MusicIP/MusicMagicMixer/ \
+    && chown -R musicip /opt/MusicIP \
+    && wget -O /home/musicip/mmm.ini "http://www.barclayworks.com/mmm.ini" \
+    && cp -f /home/musicip/mmm.ini /opt/MusicIP/MusicMagicMixer/ \
     && apt-get purge -y --auto-remove ca-certificates wget
 
 EXPOSE 10002
