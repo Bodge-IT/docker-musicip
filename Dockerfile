@@ -34,9 +34,9 @@ VOLUME /home/musicip
 
 RUN set -x \
     && chown -R musicip /opt/MusicIP \
-    && cd /home/musicip \
+    && cd /tmp \
     && wget -O mmm.ini "http://www.barclayworks.com/mmm.ini" \
-    && cp -f /home/musicip/mmm.ini /opt/MusicIP/MusicMagicMixer/ \
+    && cp -f mmm.ini /opt/MusicIP/MusicMagicMixer/ \
     && apt-get purge -y --auto-remove ca-certificates wget
 
 EXPOSE 10002
