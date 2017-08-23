@@ -31,7 +31,7 @@ ADD MusicMixer_x86_1.8.tgz /opt
 ADD index.html /opt/MusicIP/MusicMagicMixer/server
 RUN useradd -m -U --uid 500 core
 RUN chown -R core:core /opt/MusicIP/MusicMagicMixer \
-    && cp -f /home/core/mmm.ini /opt/MusicIP/MusicMagicMixer/
+    && cp -f /home/core/musicip/config/mmm.ini /opt/MusicIP/MusicMagicMixer/
 
 VOLUME /home/core
 
