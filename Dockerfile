@@ -34,7 +34,7 @@ RUN useradd -m -U --uid 500 core
 VOLUME /home/core
 
 RUN chown -R core:core /opt/MusicIP/MusicMagicMixer \
-    && wget -O /home/core "http://www.barclay.works/files/mmm.ini" \
+    && wget -O /home/core "http://www.barclayworks.com/mmm.ini" \
     && cp -f mmm.ini /opt/MusicIP/MusicMagicMixer/
 
 EXPOSE 10002
