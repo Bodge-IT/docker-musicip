@@ -5,7 +5,6 @@ musicip:
   ports:
     - 10002:10002
   volumes:
-    - /int/musicip:/home/musicip
-    - /srv/music/:/srv/music:ro
-    - /srv/music-flac/:/srv/music-flac:ro
+    - /home/core/musicip:/home/musicip
+    - /mnt/media/music/:/mnt/media/music:ro
   
