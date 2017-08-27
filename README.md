@@ -5,7 +5,10 @@ Containers are are voodoo magic to me but I realised justifiably's container was
 
 To get this this to work and allow for LMS to import from your MusicIP database (usually 'default.m3lib') during scanning, I had to change a couple of things.
 
-See the wiki for updated details.
+1. Change the mmm.ini to reflect the correct location of the database (I store this in the root of music folder on NAS)
+2. 
+
+See the Wiki for updated details.
 
 
 ## TODO
