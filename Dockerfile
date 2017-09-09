@@ -21,9 +21,11 @@ RUN set -x \
     && apt-get purge -y --auto-remove ca-certificates
 
 # Fetch from spicefly.com
-# WORKDIR /opt
+WORKDIR /opt
 # RUN wget http://www.spicefly.com/files/MusicMixer_x86_1.8.tgz
 # RUN tar -xpf MusicMixer_x86_1.8.tgz && rm -f MusicMixer_x86_1.8.tgz
+RUN wget http://www.mediafire.com/file/mmcymixkxzz/genpuid_linux_1.4.tgz
+RUN tar -xpf genpuid_linux_1.4.tgz && rm -f genpuid_linux_1.4.tgz
 # RUN cd /opt/MusicIP/MusicMagicMixer/server && \
 # RUN unzip index-1.1.zip
 
