@@ -36,7 +36,7 @@ ADD index.html /opt/MusicIP/MusicMagicMixer/server
 # RUN useradd -m -g users --uid 1057 musicip
 RUN useradd -m -g 500 -u 500 core
 
-VOLUME /home/musicip
+VOLUME /home/core
 
 EXPOSE 10002
 
