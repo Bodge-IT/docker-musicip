@@ -34,7 +34,7 @@ ADD genpuid_linux_1.4.tgz /opt
 ADD index.html /opt/MusicIP/MusicMagicMixer/server
 # ADD mmm.ini /opt/MusicIP/MusicMagicMixer
 # RUN useradd -m -g users --uid 1057 musicip
-RUN useradd -m -g 500 -u 500 core
+RUN useradd -m -U -u 500 core
 
 VOLUME /home/core
 
