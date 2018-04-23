@@ -32,7 +32,7 @@ RUN set -x \
 ADD MusicMixer_x86_1.8.tgz /opt
 ADD genpuid_linux_1.4.tgz /opt
 ADD index.html /opt/MusicIP/MusicMagicMixer/server
-# ADD mmm.ini /opt/MusicIP/MusicMagicMixer
+ADD mmm.ini /opt/MusicIP/MusicMagicMixer
 # RUN useradd -m -g users --uid 1057 musicip
 RUN useradd -m -U -u 500 core
 
