@@ -30,7 +30,7 @@ RUN set -x \
 # RUN unzip index-1.1.zip
 
 ADD MusicMixer_x86_1.8.tgz /opt
-ADD genpuid_linux_1.4.tgz /opt
+# ADD genpuid_linux_1.4.tgz /opt
 ADD index.html /opt/MusicIP/MusicMagicMixer/server
 RUN rm -f /opt/MusicIP/MusicMagicMixer/mmm.ini
 ADD mmm.ini /opt/MusicIP/MusicMagicMixer
