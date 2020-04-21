@@ -35,9 +35,8 @@ ADD index.html /opt/MusicIP/MusicMagicMixer/server
 RUN rm -f /opt/MusicIP/MusicMagicMixer/mmm.ini
 ADD mmm.ini /opt/MusicIP/MusicMagicMixer
 # RUN useradd -m -g users --uid 1057 musicip
-RUN useradd -m -U -u 500 core
-
-VOLUME /home/core
+RUN useradd -m -U -u 1000 bw-admin
+VOLUME /home/musicip
 
 EXPOSE 10002
 
